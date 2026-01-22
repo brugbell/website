@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brugbell | Abfüllen & Verschliessen</title>
+    <meta name="description" content="Halbautomatische Abfülltechnik für Hofläden und Manufakturen. Edelweiss Abfüllsysteme by Brugbell.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prata&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* BRAND VARIABLES (Harmonized with Brugbell Main Site) */
+        :root {
+            --color-green: #4A5D46;
+            --color-light-green: #8F9E8B;
+            --color-earth: #8C7B6C;
+            --color-cream: #F9F8F6;
+            --color-stone: #EBE9E4;
+            --color-citrus: #D4AF37;
+            --color-text: #1f2937;
+            --color-text-light: #4b5563;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            background: var(--color-cream); /* Cream background like main site */
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* NAV */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: box-shadow 0.3s;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .nav.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        
+        .nav-content {
+            max-width: 1280px; margin: 0 auto; padding: 18px 24px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        
+        .nav-logo {
+            font-size: 24px;
+            color: var(--color-green);
+            font-family: 'Prata', serif;
+            font-weight: 400;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+        
+        .nav-menu { display: flex; gap: 35px; align-items: center; }
+        
+        .nav-link {
+            font-size: 13px; text-transform: uppercase; letter-spacing: 1px;
+            color: var(--color-text-light); text-decoration: none;
+            transition: color 0.3s; font-weight: 500; cursor: pointer;
+        }
+        
+        .nav-link:hover, .nav-link.active { color: var(--color-green); }
+        
+        .back-link {
+            font-size: 12px; color: var(--color-earth); 
+            text-decoration: none; margin-right: 20px;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 80vh;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center;
+            padding: 120px 24px 80px;
+            /* Gradient similar to main site header but lighter */
+            background: linear-gradient(to bottom, #fff 0%, var(--color-stone) 100%);
+        }
+        
+        .hero h1 {
+            font-family: 'Prata', serif;
+            font-size: 56px; margin-bottom: 25px;
+            color: var(--color-green);
+            line-height: 1.1;
+        }
+        
+        .hero .subtitle {
+            font-size: 18px; font-weight: 300;
+            color: var(--color-text-light); margin-bottom: 40px;
+            max-width: 600px; margin-left: auto; margin-right: auto;
+        }
+        
+        .hero-cta {
+            display: inline-block; padding: 16px 40px;
+            background: var(--color-green); color: white;
+            text-decoration: none; font-size: 13px; letter-spacing: 1px;
+            font-weight: 600; text-transform: uppercase;
+            transition: all 0.3s; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-cta:hover { background: var(--color-earth); transform: translateY(-2px); }
+        
+        /* SECTIONS */
+        .section { padding: 100px 24px; max-width: 1280px; margin: 0 auto; }
+        
+        .section-header { text-align: center; margin-bottom: 70px; }
+        
+        .section-title {
+            font-family: 'Prata', serif;
+            font-size: 42px; margin-bottom: 18px; color: var(--color-green);
+        }
+        
+        .section-subtitle {
+            font-size: 16px; color: var(--color-text-light);
+            max-width: 600px; margin: 0 auto; font-weight: 300;
+        }
+        
+        /* FEATURE GRID (Problem) */
+        .feature-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
+        }
+        
+        .feature {
+            background: white; padding: 40px;
+            border-top: 3px solid var(--color-earth);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-icon {
+            font-size: 32px; margin-bottom: 20px;
+            color: var(--color-citrus);
+        }
+        
+        .feature h3 {
+            font-family: 'Prata', serif; font-size: 22px;
+            margin-bottom: 12px; color: var(--color-text);
+        }
+        
+        /* MACHINES GRID */
+        .machines-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
+        }
+        
+        .machine-card {
+            background: white; cursor: pointer;
+            transition: transform 0.4s ease;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+        
+        .machine-card:hover { transform: translateY(-8px); }
+        
+        .machine-image {
+            aspect-ratio: 4/5; background: #f3f3f3;
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden;
+        }
+        
+        .machine-image img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .machine-content { padding: 30px; }
+        
+        .machine-card h3 {
+            font-family: 'Prata', serif; font-size: 24px;
+            margin-bottom: 5px; color: var(--color-green);
+        }
+        
+        .machine-card .model {
+            font-size: 11px; color: var(--color-citrus);
+            letter-spacing: 1px; text-transform: uppercase;
+            font-weight: 700; display: block; margin-bottom: 15px;
+        }
+        
+        /* FORM SECTION */
+        .form-section { background: white; padding: 100px 24px; }
+        .form-container { max-width: 600px; margin: 0 auto; }
+        
+        .form-group { margin-bottom: 24px; }
+        
+        .form-group label {
+            display: block; font-size: 12px; text-transform: uppercase;
+            letter-spacing: 1px; margin-bottom: 8px; color: var(--color-text-light);
+        }
+        
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 16px;
+            border: 1px solid #e5e5e5; background: var(--color-cream);
+            font-family: 'Inter', sans-serif; font-size: 15px;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none; border-color: var(--color-green);
+            background: white;
+        }
+        
+        .submit-btn {
+            width: 100%; padding: 18px;
+            background: var(--color-green); color: white;
+            border: none; font-size: 13px; text-transform: uppercase;
+            letter-spacing: 2px; font-weight: 600; cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .submit-btn:hover { background: var(--color-earth); }
+        
+        /* FOOTER */
+        .footer {
+            padding: 80px 24px 40px; background: #1a1a1a; color: white;
+        }
+        
+        .footer-content {
+            max-width: 1280px; margin: 0 auto;
+            display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px;
+        }
+        
+        .footer h3 {
+            font-size: 12px; text-transform: uppercase; letter-spacing: 2px;
+            color: var(--color-citrus); margin-bottom: 25px;
+        }
+        
+        .footer-links a {
+            display: block; color: #9ca3af; text-decoration: none;
+            margin-bottom: 12px; font-size: 14px; font-weight: 300;
+            cursor: pointer; transition: color 0.3s;
+        }
+        
+        .footer-links a:hover { color: white; }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 40px; }
+            .feature-grid, .machines-grid, .footer-content { grid-template-columns: 1fr; }
+            .nav-menu { display: none; } /* Simplified mobile handling */
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav" id="nav">
+        <div class="nav-content">
+            <div style="display:flex; align-items:center;">
+                <a href="index.html" class="back-link">← Zurück zu Brugbell Trading</a>
+                <a href="#" class="nav-logo">Brugbell <span style="font-family:'Inter'; font-size:14px; color:var(--color-citrus); text-transform:uppercase; letter-spacing:2px; margin-left:10px;">Solutions</span></a>
+            </div>
+            <div class="nav-menu">
+                <a class="nav-link" onclick="scrollToSection('problem')">Problem</a>
+                <a class="nav-link" onclick="scrollToSection('solutions')">Maschinen</a>
+                <a class="nav-link" onclick="scrollToSection('kontakt')">Offerte</a>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <span style="color:var(--color-citrus); text-transform:uppercase; letter-spacing:2px; font-size:12px; display:block; margin-bottom:20px; font-weight:700;">Edelweiss Series</span>
+            <h1>Vom Topf ins Glas</h1>
+            <p class="subtitle">Halbautomatische Abfülltechnik für Hofläden und kleine Manufakturen in der Deutschschweiz.</p>
+            <a href="#kontakt" class="hero-cta" onclick="scrollToSection('kontakt'); return false;">Offerte anfragen</a>
+        </div>
+    </section>
+    
+    <section class="section" id="problem">
+        <div class="section-header">
+            <h2 class="section-title">Der Engpass in der Manufaktur</h2>
+            <p class="section-subtitle">Ihre Produkte sind erstklassig. Doch das Abfüllen von Hand kostet Zeit, Nerven und Qualität.</p>
+        </div>
+        <div class="feature-grid">
+            <div class="feature">
+                <div class="feature-icon">⏱</div>
+                <h3>Zeitverlust</h3>
+                <p style="color:var(--color-text-light); font-weight:300;">Kelle und Trichter sind ungenau. Es kleckert, kostet wertvolle Zeit und Reinigungsaufwand.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💪</div>
+                <h3>Körperliche Belastung</h3>
+                <p style="color:var(--color-text-light); font-weight:300;">Hunderte Gläser von Hand zudrehen? Das spüren Sie abends in den Handgelenken.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🛡</div>
+                <h3>Qualitäts-Risiko</h3>
+                <p style="color:var(--color-text-light); font-weight:300;">Ein Handverschluss ist nie gleichmässig. Wenn das Vakuum fehlt, war die Arbeit umsonst.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="solutions" style="background: white;">
+        <div class="section-header">
+            <h2 class="section-title">Technische Lösungen</h2>
+            <p class="section-subtitle">Jede Maschine passt sich problemlos an verschiedene Glashöhen und Deckelgrössen an. Einfacher Formatwechsel ohne Werkzeug.</p>
+        </div>
+        <div class="machines-grid">
+            <div class="machine-card">
+                <div class="machine-image">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400" alt="Dosierer">
+                </div>
+                <div class="machine-content">
+                    <h3>Dosierer</h3>
+                    <span class="model">Edelweiss DS1</span>
+                    <p style="color:var(--color-text-light); font-size:14px;">Kolbendosierer für Saucen, Konfitüren und flüssige Produkte. Einstellbares Volumen, schnelle Reinigung.</p>
+                </div>
+            </div>
+            <div class="machine-card">
+                <div class="machine-image">
+                    <img src="https://images.unsplash.com/photo-1530982011887-3cc11cc85693?auto=format&fit=crop&q=80&w=400" alt="Verschliesser">
+                </div>
+                <div class="machine-content">
+                    <h3>Verschliesser</h3>
+                    <span class="model">Edelweiss S1</span>
+                    <p style="color:var(--color-text-light); font-size:14px;">Für alle TO-Deckel (TO38 bis TO110) und Glashöhen von 40mm bis 260mm. Konstantes Drehmoment.</p>
+                </div>
+            </div>
+            <div class="machine-card">
+                <div class="machine-image">
+                    <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&q=80&w=400" alt="Vakuum">
+                </div>
+                <div class="machine-content">
+                    <h3>Vakuum-Master</h3>
+                    <span class="model">Edelweiss V1</span>
+                    <p style="color:var(--color-text-light); font-size:14px;">Verschliessen unter Vakuum mit Dampfinjektion. Hält Produkte länger frisch und knackig.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="form-section" id="kontakt">
+        <div class="form-container">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 class="section-title">Bedarfsanalyse</h2>
+                <p class="section-subtitle">Schildern Sie uns Ihren Prozess. Wir melden uns mit einer passenden Konfiguration.</p>
+            </div>
+            
+            <form id="contactForm">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="name" placeholder="Ihr Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Betrieb</label>
+                        <input type="text" name="business" placeholder="Hofladen / Firma">
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label>E-Mail *</label>
+                        <input type="email" name="email" placeholder="ihre@email.ch" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefon</label>
+                        <input type="tel" name="phone" placeholder="+41...">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Produkte & Menge</label>
+                    <textarea name="message" placeholder="Was füllen Sie ab? Wie viele Gläser pro Saison?"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Offerte anfordern</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="nav-logo" style="color:white; margin-bottom:15px; display:block;">Brugbell</div>
+                <p style="color:#9ca3af; font-size:14px; line-height:1.8;">
+                    Bahnhofstrasse 3a<br>5616 Meisterschwanden<br>Schweiz<br><br>
+                    <a href="mailto:info@brugbell.com" style="color:white; text-decoration:none;">info@brugbell.com</a>
+                </p>
+            </div>
+            <div class="footer-links">
+                <h3>Navigation</h3>
+                <a href="index.html">← Zurück zur Hauptseite</a>
+                <a onclick="scrollToSection('problem')">Problemstellung</a>
+                <a onclick="scrollToSection('solutions')">Maschinen</a>
+            </div>
+            <div class="footer-links">
+                <h3>Rechtliches</h3>
+                <a href="#">Datenschutz</a>
+                <a href="#">Impressum</a>
+                <a href="#">AGB</a>
+            </div>
+        </div>
+        <div style="border-top: 1px solid #333; margin-top: 50px; padding-top: 30px; text-align: center; font-size: 12px; color: #666;">
+            © 2026 Brugbell GmbH. Alle Rechte vorbehalten.
+        </div>
+    </footer>
+    
+    <script>
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('nav');
+        if (window.scrollY > 50) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+    });
+
+    // Smooth Scroll
+    function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            const navHeight = document.querySelector('.nav').offsetHeight;
+            const sectionTop = section.offsetTop - navHeight - 20;
+            window.scrollTo({ top: sectionTop, behavior: 'smooth' });
+        }
+    }
+
+    // Form Submission (Mailto)
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = {};
+        formData.forEach((value, key) => { data[key] = value; });
+        
+        const body = `Name: ${data.name}\nBetrieb: ${data.business}\nE-Mail: ${data.email}\nTel: ${data.phone}\n\nNachricht:\n${data.message}`;
+        window.location.href = 'mailto:info@brugbell.com?subject=Anfrage Edelweiss Maschinen&body=' + encodeURIComponent(body);
+    });
+    </script>
+</body>
+</html>
