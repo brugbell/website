@@ -422,16 +422,45 @@
         }
     }
 
-    // Form Submission (Mailto)
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const formData = new FormData(e.target);
-        const data = {};
-        formData.forEach((value, key) => { data[key] = value; });
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Stops the page reload
+    
+    const btn = e.target.querySelector('button');
+    const originalText = btn.innerText;
+    
+    // 1. Show loading state
+    btn.innerText = 'Wird gesendet...';
+    btn.disabled = true;
+
+    const formData = new FormData(e.target);
+
+    // 2. Send data to FormSubmit (Change email if needed)
+    fetch("https://formsubmit.co/ajax/info@brugbell.com", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        // 3. Success Feedback
+        btn.innerText = 'Anfrage gesendet!';
+        btn.style.backgroundColor = '#166534'; // Dark Green
+        e.target.reset(); // Clear the form
         
-        const body = `Name: ${data.name}\nBetrieb: ${data.business}\nE-Mail: ${data.email}\nTel: ${data.phone}\n\nNachricht:\n${data.message}`;
-        window.location.href = 'mailto:info@brugbell.com?subject=Anfrage Edelweiss Maschinen&body=' + encodeURIComponent(body);
+        // Reset button after 3 seconds
+        setTimeout(() => {
+            btn.innerText = originalText;
+            btn.style.backgroundColor = '';
+            btn.disabled = false;
+        }, 3000);
+    })
+    .catch(error => {
+        // 4. Error Fallback
+        console.error('Error:', error);
+        btn.innerText = 'Fehler. Bitte E-Mail senden.';
+        // Fallback to mailto if the server fails
+        window.location.href = "mailto:info@brugbell.com";
     });
+});
     </script>
 </body>
 </html>
