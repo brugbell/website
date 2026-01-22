@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brugbell | Premium Trading</title>
+    <title>Brugbell | Premium Trading & Technology</title>
     <meta name="description" content="Verbindung von Spanien und der Schweiz durch erstklassigen Handel, Sourcing und nachhaltige Partnerschaften.">
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prata&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Custom Config -->
     <script>
         tailwind.config = {
             theme: {
@@ -53,43 +50,37 @@
 </head>
 <body class="font-sans text-gray-800 bg-brugbell-cream antialiased">
 
-    <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
                 <a href="#" class="font-serif text-3xl tracking-wide text-brugbell-green">
                     Brugbell
                 </a>
 
-                <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-10 items-center">
                     <a href="#about" class="text-sm font-medium uppercase tracking-wider text-gray-600 hover:text-brugbell-green transition-colors">Über uns</a>
-                    <a href="#services" class="text-sm font-medium uppercase tracking-wider text-gray-600 hover:text-brugbell-green transition-colors">Dienstleistungen</a>
-                    <a href="#values" class="text-sm font-medium uppercase tracking-wider text-gray-600 hover:text-brugbell-green transition-colors">Werte</a>
+                    <a href="#services" class="text-sm font-medium uppercase tracking-wider text-gray-600 hover:text-brugbell-green transition-colors">Handel</a>
+                    <a href="#machinery" class="text-sm font-medium uppercase tracking-wider text-gray-600 hover:text-brugbell-green transition-colors">Ausrüstung</a>
                     <a href="#contact" class="px-5 py-2.5 bg-brugbell-green text-white text-sm font-medium uppercase tracking-wider hover:bg-opacity-90 transition-all shadow-sm">Kontakt</a>
                 </div>
 
-                <!-- Mobile Menu Button -->
                 <button id="mobile-menu-btn" class="md:hidden text-brugbell-green">
                     <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" /></svg>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="fixed inset-0 bg-brugbell-green z-40 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col justify-center items-center space-y-8 text-white">
             <button id="close-menu-btn" class="absolute top-6 right-6">
                 <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" /></svg>
             </button>
             <a href="#about" class="font-serif text-3xl" onclick="toggleMenu()">Über uns</a>
-            <a href="#services" class="font-serif text-3xl" onclick="toggleMenu()">Dienstleistungen</a>
-            <a href="#values" class="font-serif text-3xl" onclick="toggleMenu()">Werte</a>
+            <a href="#services" class="font-serif text-3xl" onclick="toggleMenu()">Handel & Sourcing</a>
+            <a href="#machinery" class="font-serif text-3xl" onclick="toggleMenu()">Ausrüstung</a>
             <a href="#contact" class="font-serif text-3xl" onclick="toggleMenu()">Kontakt</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <header class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0 flex">
             <div class="w-1/2 h-full relative">
@@ -112,11 +103,11 @@
                 Verbindung Premium <br/> <span class="italic text-brugbell-citrus">&</span> Schweiz
             </h1>
             <p class="fade-in-up delay-200 text-lg md:text-xl text-white/90 font-light mb-10 max-w-2xl mx-auto leading-relaxed">
-                Handel mit Premium-Lebensmitteln mit einem persönlichen Ansatz. Wir bauen Marken auf, unterstützen nachhaltige Landwirtschaft und liefern Qualität.
+                Handel mit Premium-Lebensmitteln und technische Lösungen für Produzenten. Wir bauen Marken auf und liefern Qualität.
             </p>
             <div class="fade-in-up delay-300 flex flex-col md:flex-row gap-4 justify-center">
                 <a href="#services" class="px-8 py-4 bg-white text-brugbell-green hover:bg-brugbell-stone transition-all duration-300 uppercase tracking-widest text-sm font-bold shadow-lg">
-                    Unsere Leistungen
+                    Dienstleistungen
                 </a>
                 <a href="#contact" class="px-8 py-4 border border-white text-white hover:bg-white hover:text-brugbell-green transition-all duration-300 uppercase tracking-widest text-sm font-bold">
                     Partner werden
@@ -125,7 +116,6 @@
         </div>
     </header>
 
-    <!-- About Section -->
     <section id="about" class="py-24 px-6 md:px-12 bg-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div class="space-y-8">
@@ -133,88 +123,116 @@
                 <div class="w-20 h-1 bg-brugbell-citrus"></div>
                 <div class="text-gray-600 space-y-6 text-lg font-light leading-relaxed">
                     <p>
-                        Unser Fokus liegt auf erstklassigen, qualitativ hochwertigen Lebensmittelprodukten, die Spanien und die Schweiz verbinden. Unser Ziel ist es, unseren Kunden ein solides, differenziertes Portfolio zu bieten. Wir wollen Marken aufbauen und eine starke Marktpräsenz etablieren.
+                        Unser Fokus liegt auf erstklassigen, qualitativ hochwertigen Lebensmittelprodukten, die Spanien und die Schweiz verbinden. Unser Ziel ist es, unseren Kunden ein solides, differenziertes Portfolio zu bieten.
                     </p>
                     <p>
-                        Unser Ansatz ist persönlich und praxisnah. Wir unterstützen unsere Partner bei jedem Schritt – vom Sourcing über die Produktplatzierung bis hin zur Markteinführung und Wachstumsstrategie.
+                        Unser Ansatz ist ganzheitlich. Neben dem Handel unterstützen wir unsere Produzenten auch mit der <strong>notwendigen Infrastruktur</strong>, um Qualität zu sichern und Produktionsprozesse zu optimieren.
                     </p>
                     <p class="font-medium text-brugbell-green">
-                        Ob authentische spanische Spezialitäten in der Schweiz oder Schweizer Köstlichkeiten in Spanien: Brugbell steht für nachhaltige Premium-Lösungen, die auf individuelle Bedürfnisse zugeschnitten sind.
+                        Ob authentische spanische Spezialitäten in der Schweiz oder technische Ausrüstung für Betriebe: Brugbell steht für nachhaltige Premium-Lösungen.
                     </p>
                 </div>
             </div>
 
-<div class="relative">
-    <div class="aspect-[4/5] overflow-hidden rounded-lg shadow-2xl">
-        <img src="portfolio.png" alt="Premium Olivenöl" class="w-full h-full object-cover">
-    </div>
-    <div class="absolute -bottom-10 -left-10 bg-brugbell-green text-white p-8 rounded-lg shadow-xl max-w-xs hidden md:block">
-        <p class="font-serif text-xl italic mb-2">"Mehrwert für den Endkunden schaffen."</p>
-        <span class="text-xs uppercase tracking-widest text-brugbell-citrus">Unsere Vision</span>
-    </div>
-</div>
+            <div class="relative">
+                <div class="aspect-[4/5] overflow-hidden rounded-lg shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1621953267154-20d0c388636d?q=80&w=2574&auto=format&fit=crop" alt="Premium Olivenöl" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute -bottom-10 -left-10 bg-brugbell-green text-white p-8 rounded-lg shadow-xl max-w-xs hidden md:block">
+                    <p class="font-serif text-xl italic mb-2">"Mehrwert für den Endkunden schaffen."</p>
+                    <span class="text-xs uppercase tracking-widest text-brugbell-citrus">Unsere Vision</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Grid -->
-    <section id="services" class="py-24 px-6 bg-brugbell-stone/30">
+    <section id="services" class="pt-24 pb-12 px-6 bg-brugbell-stone/30">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <span class="text-brugbell-green uppercase tracking-widest text-xs font-bold">Was wir bieten</span>
-                <h2 class="font-serif text-4xl md:text-5xl mt-3 text-gray-800">Unsere Dienstleistungen</h2>
+                <span class="text-brugbell-green uppercase tracking-widest text-xs font-bold">Handels-Sparte</span>
+                <h2 class="font-serif text-4xl md:text-5xl mt-3 text-gray-800">Lebensmittel & Sourcing</h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-white p-10 rounded-sm shadow-sm hover:shadow-xl transition-shadow duration-300 border-l-4 border-brugbell-green group">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-10 rounded-sm shadow-sm hover:shadow-xl transition-shadow duration-300 border-t-4 border-brugbell-green group">
                     <div class="h-12 w-12 bg-brugbell-stone rounded-full flex items-center justify-center mb-6 text-brugbell-green group-hover:bg-brugbell-green group-hover:text-white transition-colors">
                         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                     </div>
                     <h3 class="font-serif text-2xl mb-4 text-gray-800">Premium Sourcing</h3>
                     <p class="text-gray-600 font-light leading-relaxed">
-                        Beschaffung erstklassiger, qualitativ hochwertiger Produkte auf Mandatsbasis für die Lebensmittelindustrie. Wir identifizieren und prüfen die besten Produzenten für Ihre spezifischen Anforderungen.
+                        Beschaffung erstklassiger, qualitativ hochwertiger Produkte auf Mandatsbasis für die Lebensmittelindustrie. Wir identifizieren die besten Produzenten.
                     </p>
                 </div>
 
-                <!-- Service 2: Despensa.ch -->
-                <div class="bg-white p-10 rounded-sm shadow-sm hover:shadow-xl transition-shadow duration-300 border-l-4 border-brugbell-citrus group">
+                <div class="bg-white p-10 rounded-sm shadow-sm hover:shadow-xl transition-shadow duration-300 border-t-4 border-brugbell-citrus group">
                     <div class="h-12 w-12 bg-brugbell-stone rounded-full flex items-center justify-center mb-6 text-brugbell-citrus group-hover:bg-brugbell-citrus group-hover:text-white transition-colors">
                          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
                     </div>
                     <h3 class="font-serif text-2xl mb-4 text-gray-800">Detailhandel</h3>
                     <p class="text-gray-600 font-light leading-relaxed mb-6">
-                        Exklusiver Vertrieb von ausgewählten Spezialitäten für Endkunden. Über Despensa bringen wir authentische Aromen direkt in die Schweizer Haushalte.
+                        Exklusiver Vertrieb von ausgewählten Spezialitäten für Endkunden. Über Despensa bringen wir authentische Aromen direkt in Schweizer Haushalte.
                     </p>
                     <a href="https://brugbell.com" target="_blank" class="inline-block text-xs font-bold uppercase tracking-widest text-brugbell-citrus hover:text-brugbell-green transition-colors">Website besuchen →</a>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="bg-white p-10 rounded-sm shadow-sm hover:shadow-xl transition-shadow duration-300 border-l-4 border-brugbell-earth group">
+                <div class="bg-white p-10 rounded-sm shadow-sm hover:shadow-xl transition-shadow duration-300 border-t-4 border-brugbell-earth group">
                     <div class="h-12 w-12 bg-brugbell-stone rounded-full flex items-center justify-center mb-6 text-brugbell-earth group-hover:bg-brugbell-earth group-hover:text-white transition-colors">
                         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
                     </div>
-                    <h3 class="font-serif text-2xl mb-4 text-gray-800">Partnerschaften mit Kleinbauern</h3>
+                    <h3 class="font-serif text-2xl mb-4 text-gray-800">Erzeuger-Netzwerk</h3>
                     <p class="text-gray-600 font-light leading-relaxed">
-                        Faire und direkte Partnerschaften mit Kleinbauern für Zitrusfrüchte und andere Premiumprodukte direkt vom Erzeuger, was Transparenz und höchste Qualität garantiert.
-                    </p>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="bg-white p-10 rounded-sm shadow-sm hover:shadow-xl transition-shadow duration-300 border-l-4 border-gray-400 group">
-                    <div class="h-12 w-12 bg-brugbell-stone rounded-full flex items-center justify-center mb-6 text-gray-600 group-hover:bg-gray-600 group-hover:text-white transition-colors">
-                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
-                    </div>
-                    <h3 class="font-serif text-2xl mb-4 text-gray-800">Ausrüstung für Produzenten</h3>
-                    <p class="text-gray-600 font-light leading-relaxed">
-                        Bereitstellung von Ausrüstung für Kleinproduzenten, einschliesslich Kühlung, Abfüll- und Konservierungsanlagen sowie Verpackungslösungen zur Modernisierung der Produktion.
+                        Faire und direkte Partnerschaften mit Kleinbauern für Zitrusfrüchte und andere Premiumprodukte direkt vom Erzeuger. Transparenz und höchste Qualität.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Values Banner -->
+    <section id="machinery" class="py-20 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="order-2 lg:order-1 relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-brugbell-stone z-0 rounded-full opacity-50"></div>
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2670&auto=format&fit=crop" 
+                         alt="Industrielle Konservenmaschinen" 
+                         class="relative z-10 rounded-sm shadow-xl grayscale contrast-125 hover:grayscale-0 transition-all duration-500">
+                    <div class="absolute -bottom-6 -right-6 w-full h-full border-2 border-brugbell-green z-0 rounded-sm hidden lg:block"></div>
+                </div>
+
+                <div class="order-1 lg:order-2 pl-0 lg:pl-10">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-10 h-[1px] bg-gray-400"></span>
+                        <span class="text-xs font-bold uppercase tracking-widest text-gray-500">Brugbell Solutions</span>
+                    </div>
+                    <h2 class="font-serif text-4xl text-gray-800 mb-6">Abfüllen & Verschliessen für Hofläden</h2>
+                    <p class="text-gray-600 font-light text-lg mb-6 leading-relaxed">
+                        Schluss mit mühsamer Handarbeit. Wir bieten <strong>halbautomatische Lösungen</strong> für kleine Manufakturen. Vom präzisen Dosieren ohne Kleckern bis zum sicheren Vakuum-Verschluss Ihrer Gläser.
+                    </p>
+                    <ul class="space-y-3 mb-8 text-gray-600 font-light">
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brugbell-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Präzise Kolbendosierer (Saucen, Konfitüren)
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brugbell-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Twist-Off Verschliesser für alle Gläser
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brugbell-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Vakuum-Technologie für lange Haltbarkeit
+                        </li>
+                    </ul>
+
+                    <a href="machinery.html" class="inline-flex items-center px-8 py-4 bg-gray-800 text-white hover:bg-brugbell-green transition-colors duration-300 uppercase tracking-widest text-xs font-bold rounded-sm group">
+                        Zu den Maschinen
+                        <svg class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="values" class="py-20 bg-brugbell-green text-white">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <h2 class="font-serif text-3xl mb-12">Unsere Kernwerte</h2>
@@ -238,7 +256,6 @@
         </div>
     </section>
 
-    <!-- Footer / Contact -->
     <footer id="contact" class="bg-gray-900 text-white pt-24 pb-12 relative overflow-hidden">
         <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
         
@@ -317,7 +334,3 @@
     </script>
 </body>
 </html>
-
-
-
-
