@@ -27,14 +27,14 @@
         
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.5; /* Slightly tighter line height */
+            line-height: 1.5;
             color: var(--color-text);
             background: var(--color-cream);
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
         
-        /* NAV - More Compact */
+        /* NAV - Compact */
         .nav {
             position: fixed; top: 0; left: 0; right: 0;
             background: rgba(255,255,255,0.95);
@@ -42,7 +42,7 @@
             z-index: 1000;
             transition: box-shadow 0.3s;
             border-bottom: 1px solid rgba(0,0,0,0.05);
-            height: 60px; /* Fixed height for compactness */
+            height: 60px; /* Fixed compact height */
             display: flex; align-items: center;
         }
         
@@ -54,10 +54,11 @@
         }
         
         .nav-logo {
-            font-size: 20px; /* Smaller Logo */
+            font-size: 20px;
             color: var(--color-green);
             font-family: 'Prata', serif;
             text-decoration: none;
+            letter-spacing: 0.02em;
         }
         
         .nav-menu { display: flex; gap: 25px; align-items: center; }
@@ -75,18 +76,18 @@
             text-decoration: none; margin-right: 15px;
         }
 
-        /* HERO - Compact height */
+        /* HERO - Compact */
         .hero {
-            min-height: 60vh; /* Reduced from 80vh */
+            min-height: 60vh;
             display: flex; align-items: center; justify-content: center;
             text-align: center;
-            padding: 100px 24px 60px; /* Reduced padding */
+            padding: 100px 24px 60px;
             background: linear-gradient(to bottom, #fff 0%, var(--color-stone) 100%);
         }
         
         .hero h1 {
             font-family: 'Prata', serif;
-            font-size: 42px; /* Reduced from 56px */
+            font-size: 42px; /* Smaller header */
             margin-bottom: 15px;
             color: var(--color-green);
             line-height: 1.1;
@@ -95,11 +96,11 @@
         .hero .subtitle {
             font-size: 16px; font-weight: 300;
             color: var(--color-text-light); margin-bottom: 30px;
-            max-width: 500px; margin-left: auto; margin-right: auto;
+            max-width: 600px; margin-left: auto; margin-right: auto;
         }
         
         .hero-cta {
-            display: inline-block; padding: 12px 30px; /* Smaller button */
+            display: inline-block; padding: 12px 30px;
             background: var(--color-green); color: white;
             text-decoration: none; font-size: 12px; letter-spacing: 1px;
             font-weight: 600; text-transform: uppercase;
@@ -108,29 +109,29 @@
         
         .hero-cta:hover { background: var(--color-earth); transform: translateY(-2px); }
         
-        /* SECTIONS - Reduced Padding */
+        /* SECTIONS - Compact Padding */
         .section { padding: 60px 24px; max-width: 1000px; margin: 0 auto; }
         
-        .section-header { text-align: center; margin-bottom: 40px; } /* Reduced from 70px */
+        .section-header { text-align: center; margin-bottom: 40px; }
         
         .section-title {
             font-family: 'Prata', serif;
-            font-size: 32px; /* Reduced from 42px */
+            font-size: 32px;
             margin-bottom: 10px; color: var(--color-green);
         }
         
         .section-subtitle {
             font-size: 14px; color: var(--color-text-light);
-            max-width: 500px; margin: 0 auto; font-weight: 300;
+            max-width: 600px; margin: 0 auto; font-weight: 300;
         }
         
         /* FEATURE GRID */
         .feature-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; /* Reduced gap */
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
         }
         
         .feature {
-            background: white; padding: 25px; /* Reduced padding */
+            background: white; padding: 25px;
             border-top: 2px solid var(--color-earth);
             box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.05);
         }
@@ -144,11 +145,12 @@
             font-family: 'Prata', serif; font-size: 18px;
             margin-bottom: 8px; color: var(--color-text);
         }
-        .feature p { font-size: 13px; line-height: 1.5; }
+        
+        .feature p { font-size: 13px; line-height: 1.5; font-weight: 300; color: var(--color-text-light); }
         
         /* MACHINES GRID */
         .machines-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; /* Reduced gap */
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
         }
         
         .machine-card {
@@ -170,7 +172,7 @@
             transition: transform 0.5s;
         }
         
-        .machine-content { padding: 20px; } /* Reduced padding */
+        .machine-content { padding: 20px; }
         
         .machine-card h3 {
             font-family: 'Prata', serif; font-size: 20px;
@@ -182,12 +184,13 @@
             letter-spacing: 1px; text-transform: uppercase;
             font-weight: 700; display: block; margin-bottom: 10px;
         }
+        .machine-card p { font-size: 12px; color: var(--color-text-light); }
         
         /* FORM SECTION */
         .form-section { background: white; padding: 60px 24px; }
-        .form-container { max-width: 500px; margin: 0 auto; } /* Narrower form */
+        .form-container { max-width: 550px; margin: 0 auto; }
         
-        .form-group { margin-bottom: 16px; } /* Tighter spacing */
+        .form-group { margin-bottom: 16px; }
         
         .form-group label {
             display: block; font-size: 10px; text-transform: uppercase;
@@ -246,7 +249,6 @@
             .feature-grid, .machines-grid, .footer-content { grid-template-columns: 1fr; gap: 20px; }
             .nav-menu { display: none; }
             .form-container { width: 100%; }
-            /* Stack inputs on mobile */
             div[style*="grid-template-columns"] { display: block !important; }
             .form-group { margin-bottom: 12px; }
         }
@@ -256,7 +258,7 @@
     <nav class="nav" id="nav">
         <div class="nav-content">
             <div style="display:flex; align-items:center;">
-                <a href="index.html" class="back-link">← Zurück</a>
+                <a href="index.html" class="back-link">← Zurück zu Brugbell</a>
                 <a href="#" class="nav-logo">Brugbell <span style="font-family:'Inter'; font-size:12px; color:var(--color-citrus); text-transform:uppercase; letter-spacing:1px; margin-left:8px;">Solutions</span></a>
             </div>
             <div class="nav-menu">
@@ -278,24 +280,24 @@
     
     <section class="section" id="problem">
         <div class="section-header">
-            <h2 class="section-title">Der Engpass</h2>
+            <h2 class="section-title">Der Engpass in der Manufaktur</h2>
             <p class="section-subtitle">Ihre Produkte sind erstklassig. Doch das Abfüllen von Hand kostet Zeit, Nerven und Qualität.</p>
         </div>
         <div class="feature-grid">
             <div class="feature">
                 <div class="feature-icon">⏱</div>
                 <h3>Zeitverlust</h3>
-                <p style="color:var(--color-text-light); font-weight:300;">Kelle und Trichter sind ungenau. Es kleckert, kostet wertvolle Zeit und Reinigungsaufwand.</p>
+                <p>Kelle und Trichter sind ungenau. Es kleckert, kostet wertvolle Zeit und Reinigungsaufwand.</p>
             </div>
             <div class="feature">
-                <div class="feature-icon">⚙</div>
-                <h3>Belastung</h3>
-                <p style="color:var(--color-text-light); font-weight:300;">Hunderte Gläser von Hand zudrehen? Das spüren Sie abends schmerzhaft in den Handgelenken.</p>
+                <div class="feature-icon">o</div>
+                <h3>Körperliche Belastung</h3>
+                <p>Hunderte Gläser von Hand zudrehen? Das spüren Sie abends in den Handgelenken.</p>
             </div>
             <div class="feature">
                 <div class="feature-icon">🛡</div>
-                <h3>Risiko</h3>
-                <p style="color:var(--color-text-light); font-weight:300;">Ein Handverschluss ist nie gleichmässig. Wenn das Vakuum fehlt, war die Arbeit umsonst.</p>
+                <h3>Qualitäts-Risiko</h3>
+                <p>Ein Handverschluss ist nie gleichmässig. Wenn das Vakuum fehlt, war die Arbeit umsonst.</p>
             </div>
         </div>
     </section>
@@ -303,7 +305,7 @@
     <section class="section" id="solutions" style="background: white;">
         <div class="section-header">
             <h2 class="section-title">Technische Lösungen</h2>
-            <p class="section-subtitle">Einfacher Formatwechsel ohne Werkzeug. Passt sich Glashöhen und Deckelgrössen an.</p>
+            <p class="section-subtitle">Jede Maschine passt sich problemlos an verschiedene Glashöhen und Deckelgrössen an. Einfacher Formatwechsel ohne Werkzeug.</p>
         </div>
         <div class="machines-grid">
             <div class="machine-card">
@@ -313,7 +315,7 @@
                 <div class="machine-content">
                     <h3>Dosierer</h3>
                     <span class="model">Edelweiss DS1</span>
-                    <p style="color:var(--color-text-light); font-size:12px;">Kolbendosierer für Saucen, Konfitüren. Einstellbares Volumen, schnelle Reinigung.</p>
+                    <p>Kolbendosierer für Saucen, Konfitüren und flüssige Produkte. Einstellbares Volumen, schnelle Reinigung.</p>
                 </div>
             </div>
             <div class="machine-card">
@@ -323,7 +325,7 @@
                 <div class="machine-content">
                     <h3>Verschliesser</h3>
                     <span class="model">Edelweiss S1</span>
-                    <p style="color:var(--color-text-light); font-size:12px;">Für TO38 bis TO110 und Glashöhen 40-260mm. Konstantes Drehmoment.</p>
+                    <p>Für alle TO-Deckel (TO38 bis TO110) und Glashöhen von 40mm bis 260mm. Konstantes Drehmoment.</p>
                 </div>
             </div>
             <div class="machine-card">
@@ -333,7 +335,7 @@
                 <div class="machine-content">
                     <h3>Vakuum-Master</h3>
                     <span class="model">Edelweiss V1</span>
-                    <p style="color:var(--color-text-light); font-size:12px;">Verschliessen unter Vakuum mit Dampf. Hält Produkte länger frisch und knackig.</p>
+                    <p>Verschliessen unter Vakuum mit Dampfinjektion. Hält Produkte länger frisch und knackig.</p>
                 </div>
             </div>
         </div>
@@ -343,7 +345,7 @@
         <div class="form-container">
             <div style="text-align: center; margin-bottom: 30px;">
                 <h2 class="section-title" style="font-size: 28px;">Bedarfsanalyse</h2>
-                <p class="section-subtitle" style="font-size: 13px;">Schildern Sie uns Ihren Prozess. Wir konfigurieren die Lösung.</p>
+                <p class="section-subtitle" style="font-size: 13px;">Schildern Sie uns Ihren Prozess. Wir melden uns mit einer passenden Konfiguration.</p>
             </div>
             
             <form id="contactForm">
@@ -377,7 +379,7 @@
                 <button type="submit" class="submit-btn">Offerte anfordern</button>
 
                 <p style="font-size: 10px; color: #6b7280; margin-top: 10px; line-height: 1.3;">
-                    <strong>Datenschutz:</strong> Ihre Angaben werden vertraulich behandelt und nur zur Bearbeitung Ihrer Anfrage genutzt.
+                    <strong>Datenschutzhinweis:</strong> Ihre Angaben werden vertraulich behandelt und nur zur Bearbeitung Ihrer Anfrage gespeichert. Eine Weitergabe an Dritte erfolgt nicht. Sie können jederzeit die Löschung per E-Mail verlangen.
                 </p>
             </form>
         </div>
@@ -388,7 +390,7 @@
             <div class="footer-info">
                 <div class="nav-logo" style="color:white; margin-bottom:10px; display:block;">Brugbell</div>
                 <p style="color:#9ca3af; font-size:12px; line-height:1.6;">
-                    Bahnhofstrasse 3a<br>5616 Meisterschwanden<br>Schweiz<br>
+                    Bahnhofstrasse 3a<br>5616 Meisterschwanden<br>Schweiz<br><br>
                     <a href="mailto:info@brugbell.com" style="color:white; text-decoration:none;">info@brugbell.com</a>
                 </p>
             </div>
@@ -399,7 +401,11 @@
                 <a onclick="scrollToSection('solutions')">Maschinen</a>
             </div>
             <div class="footer-links">
-                </div>
+                <h3></h3>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+            </div>
         </div>
         <div style="border-top: 1px solid #333; margin-top: 30px; padding-top: 20px; text-align: center; font-size: 10px; color: #666;">
             © 2026 Brugbell GmbH. Alle Rechte vorbehalten.
@@ -446,6 +452,7 @@
         })
         .catch(error => {
             console.error('Error:', error);
+            btn.innerText = 'Fehler. Bitte E-Mail senden.';
             window.location.href = "mailto:info@brugbell.com";
         });
     });
