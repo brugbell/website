@@ -253,27 +253,53 @@
         </div>
     </section>
 
-    <section class="form-section" id="kontakt">
-        <div class="form-container">
-            <div style="text-align: center; margin-bottom: 30px;">
-                <h2 class="section-title" style="font-size: 28px;">Bedarfsanalyse</h2>
-                <p class="section-subtitle" style="font-size: 13px;">Schildern Sie uns Ihren Prozess.</p>
+   <section class="form-section" id="kontakt">
+    <div class="form-container">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <h2 class="section-title" style="font-size: 28px;">Bedarfsanalyse</h2>
+            <p class="section-subtitle" style="font-size: 13px;">Schildern Sie uns Ihren Prozess.</p>
+        </div>
+        <form id="contactForm">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div class="form-group"><label>Name</label><input type="text" name="name"></div>
+                <div class="form-group"><label>Firma</label><input type="text" name="business"></div>
             </div>
-            <form id="contactForm">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                    <div class="form-group"><label>Name</label><input type="text" name="name"></div>
-                    <div class="form-group"><label>Betrieb</label><input type="text" name="business"></div>
-                </div>
-                <div class="form-group"><label>E-Mail *</label><input type="email" name="email" required></div>
-                <div class="form-group"><label>Produkte & Menge</label><textarea name="message" rows="3"></textarea></div>
-                <div class="form-group"><label>Weitere Anmerkungen</label>
-        <textarea name="message" rows="2" placeholder="Zusätzliche Details zu Ihrem Projekt"></textarea>
+            
+            <div class="form-group"><label>E-Mail *</label><input type="email" name="email" required></div>
+            
+            <div class="form-group">
+                <label>Produkteigenschaften</label>
+                <textarea name="product_details" rows="2" placeholder="Art der Produkte. Handelt es sich um fetthaltige Produkte oder Füllungen mit Öl?"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Gebinde & Deckel</label>
+                <textarea name="packaging_dims" rows="2" placeholder="Angaben zu Formaten und Durchmessern der verwendeten Deckel und Behälter"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Technische Datenblätter (Upload)</label>
+                <input type="file" name="tech_sheets" accept=".pdf,.jpg,.png" multiple style="padding: 10px 0;">
+                <p style="font-size: 11px; color: #666;">Bitte laden Sie Fichas/Datenblätter der Gebinde hier hoch.</p>
+            </div>
+
+            <div class="form-group">
+                <label>Gewünschte Produktionsleistung</label>
+                <input type="text" name="production_rate" placeholder="Gewünschte Menge pro Minute, Stunde oder Tag">
+            </div>
+
+            <div class="form-group">
+                <label>Weitere Anmerkungen</label>
+                <textarea name="message" rows="2" placeholder="Zusätzliche Details zu Ihrem Projekt"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Offerte anfordern</button>
+        </form>
+        <p style="font-size: 10px; color: #6b7280; margin-top: 15px; line-height: 1.4;">
+            <strong>Datenschutz:</strong> Ihre Daten werden vertraulich behandelt und nicht ohne Ihre Einwilligung an Dritte weitergegeben. Sie haben jederzeit das Recht auf Auskunft, Berichtigung oder Löschung Ihrer Daten.
+        </p>
     </div>
-                <button type="submit" class="submit-btn">Offerte anfordern</button>
-            </form>
-         <p style="font-size: 10px; color: #6b7280; margin-top: 15px; line-height: 1.4;">
-    <strong>Datenschutz:</strong> Ihre Daten werden vertraulich behandelt und nicht ohne Ihre Einwilligung an Dritte weitergegeben. Sie haben jederzeit das Recht auf Auskunft, Berichtigung oder Löschung Ihrer Daten.
-</p>
+</section>
         </div>
     </section>
 
