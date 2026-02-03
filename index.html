@@ -1,6 +1,97 @@
 <!DOCTYPE html>
 <html lang="de-CH">
 <head>
+    <style>
+    /* Simple Cookie Banner Styles */
+    #cookie-banner {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #f9f8f6; /* Brugbell Cream */
+        border-top: 1px solid #d1d5db;
+        padding: 1rem;
+        z-index: 1000;
+        box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    .cookie-content {
+        max-w-7xl;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.875rem;
+        color: #4b5563;
+    }
+    @media (min-width: 768px) {
+        .cookie-content {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    .cookie-btn {
+        padding: 0.5rem 1.5rem;
+        border-radius: 0.25rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    .btn-accept {
+        background-color: #4A5D46; /* Brugbell Green */
+        color: white;
+    }
+    .btn-deny {
+        background-color: transparent;
+        border: 1px solid #9ca3af;
+        color: #4b5563;
+        margin-right: 0.5rem;
+    }
+</style>
+
+<script>
+    // 1. Define your Google ID here
+    const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // REPLACE THIS with your ID
+
+    // 2. Function to load Analytics ONLY after consent
+    function loadAnalytics() {
+        var script = document.createElement('script');
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+        script.async = true;
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', GA_MEASUREMENT_ID);
+    }
+
+    // 3. Check for existing consent on page load
+    window.addEventListener('load', function() {
+        const consent = localStorage.getItem('cookie_consent');
+        
+        if (consent === 'accepted') {
+            loadAnalytics(); // User already accepted previously
+        } else if (consent === null) {
+            document.getElementById('cookie-banner').style.display = 'block'; // Show banner
+        }
+    });
+
+    // 4. Handle Button Clicks
+    function acceptCookies() {
+        localStorage.setItem('cookie_consent', 'accepted');
+        document.getElementById('cookie-banner').style.display = 'none';
+        loadAnalytics(); // Load the script now
+    }
+
+    function denyCookies() {
+        localStorage.setItem('cookie_consent', 'denied');
+        document.getElementById('cookie-banner').style.display = 'none';
+        // Do nothing (Analytics remains blocked)
+    }
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brugbell | Premium Trading & Technology</title>
@@ -49,7 +140,15 @@
     </style>
 </head>
 <body class="font-sans text-gray-800 bg-brugbell-cream antialiased">
-
+<div id="cookie-banner">
+    <div class="cookie-content">
+        <p>Wir nutzen Cookies, um unsere Website zu verbessern. Sind Sie damit einverstanden?</p>
+        <div class="flex items-center">
+            <button onclick="denyCookies()" class="cookie-btn btn-deny">Ablehnen</button>
+            <button onclick="acceptCookies()" class="cookie-btn btn-accept">Akzeptieren</button>
+        </div>
+    </div>
+</div>
 <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-all duration-300" id="navbar">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="flex justify-between items-center h-20">
@@ -365,3 +464,4 @@
     </script>
 </body>
 </html>
+
