@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Brugbell</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prata&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Prata', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brugbell-green': '#4A5D46',
+                        'brugbell-light-green': '#8F9E8B',
+                        'brugbell-earth': '#8C7B6C',
+                        'brugbell-cream': '#F9F8F6',
+                        'brugbell-stone': '#EBE9E4',
+                        'brugbell-citrus': '#D4AF37',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 bg-brugbell-cream antialiased h-screen flex flex-col relative overflow-hidden">
+
+    <nav class="absolute top-0 w-full z-50 p-6 lg:px-8">
+        <a href="/" class="block font-serif text-3xl tracking-wide text-brugbell-green">
+            <span class="underline decoration-[0.5px] underline-offset-2">Bru</span>g<span class="underline decoration-[0.5px] underline-offset-2">bell</span>
+            <span class="absolute top+2 ml-1 h-2 w-2 rounded-full bg-red-500 inline-block"></span>
+        </a>
+    </nav>
+
+    <main class="flex-grow flex flex-col justify-center items-center text-center px-4 relative z-10">
+        
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white rounded-full opacity-40 blur-3xl -z-10"></div>
+
+        <span class="fade-in-up inline-block py-1 px-3 border border-brugbell-green/20 rounded-full bg-white/50 backdrop-blur-md text-brugbell-green text-xs uppercase tracking-[0.2em] mb-8">
+            Fehler 404
+        </span>
+        
+        <h1 class="fade-in-up delay-100 font-serif text-9xl text-brugbell-green opacity-90 leading-none mb-2">
+            404
+        </h1>
+        
+        <div class="w-16 h-1 bg-brugbell-citrus mx-auto my-8 fade-in-up delay-100"></div>
+
+        <h2 class="fade-in-up delay-200 font-serif text-3xl md:text-4xl text-gray-800 mb-6">
+            Verbindung nicht gefunden.
+        </h2>
+        
+        <p class="fade-in-up delay-200 text-gray-500 font-light text-lg mb-10 max-w-md mx-auto leading-relaxed">
+            Die von Ihnen gesuchte Seite ist nicht verfügbar. <br>Vielleicht wurde sie verschoben oder existiert nicht mehr.
+        </p>
+
+        <div class="fade-in-up delay-200">
+            <a href="/" class="px-8 py-4 bg-brugbell-green text-white hover:bg-opacity-90 transition-all duration-300 uppercase tracking-widest text-xs font-bold shadow-lg">
+                Zurück zur Startseite
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="w-full py-6 text-center text-gray-400 text-xs tracking-wide">
+        &copy; 2026 Brugbell GmbH.
+    </footer>
+
+</body>
+</html>
